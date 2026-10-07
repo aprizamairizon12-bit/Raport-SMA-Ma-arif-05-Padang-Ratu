@@ -2255,10 +2255,12 @@
         function saveCloudSettings() {
             const url = document.getElementById('cloud-firebase-url').value;
             db.sekolah.cloudUrl = url;
+            localStorage.setItem('storage_mode', 'cloud');
             saveDB();
             alert("Pengaturan Cloud Sync Tersimpan!");
+            location.reload()
         }
-
+        
         function syncDataCloud() {
             alert("Sinkronisasi database dengan Cloud Berhasil! Seluruh data Anda telah diperbarui secara online.");
         }
